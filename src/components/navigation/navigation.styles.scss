@@ -1,0 +1,30 @@
+.navigation,
+.nav-items {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navigation {
+  padding: 2rem 1rem;
+  font-size: 1.5rem;
+}
+
+.nav-items {
+  width: 20rem;
+}
+
+.shopping-bag {
+  height: 2rem;
+  width: 2rem;
+  cursor: pointer;
+}
+
+.nav-link:link,
+.nav-link:visited {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: rgb(56, 56, 56);
+  font-weight: 400;
+  cursor: pointer;
+}
