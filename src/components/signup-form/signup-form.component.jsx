@@ -1,4 +1,8 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+
+import { createAction } from "../../utils/redux.utils";
+import { USER_ACTION_TYPES } from "../../store/user/user.types";
 
 import FormInput from "../form-input/form-input.component";
 import Button from "../Button/button.component";
@@ -20,6 +24,7 @@ const defaultFormFields = {
 const SignupForm = () => {
   let [formFields, setFormFields] = useState(defaultFormFields);
   let { displayName, email, password, confirmPassword } = formFields;
+  const dispatch = useDispatch();
 
   const resetFormFields = () => {
     setFormFields(defaultFormFields);
@@ -47,6 +52,7 @@ const SignupForm = () => {
       );
 
       await createUserDocumentFromAuth(user, { displayName });
+      dispatch(createAction(USER_ACTION_TYPES.SET_CURRENT_USER, user));
       resetFormFields();
     } catch (error) {
       if (error.code === "auth/email-already-in-use") {
