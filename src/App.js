@@ -7,6 +7,7 @@ import { setCurrentUser } from "./store/user/user.action";
 import Navigation from "./components/navigation/navigation.component";
 import Directory from "./components/directory/directory.component";
 import Auth from "./components/auth/auth.component";
+import Shop from "./components/shop/shop.component";
 
 import {
   onAuthStateChangedListener,
@@ -35,6 +36,7 @@ function App() {
         <Route path="/" element={<Navigation />}>
           <Route index element={<Directory />} />
           <Route path="signin" element={<Auth />} />
+          <Route path="shop" element={<Shop />} />
         </Route>
       </Routes>
     </div>
