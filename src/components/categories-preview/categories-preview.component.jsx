@@ -8,7 +8,6 @@ import "./categories-preview.styles.scss";
 const CategoriesPreview = () => {
   const categoriesMap = useSelector(selectCategoriesMap);
 
-  console.log(categoriesMap);
   return (
     <div className="categories-preview-container">
       {Object.keys(categoriesMap).map((category) => (

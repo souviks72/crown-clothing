@@ -36,7 +36,7 @@ function App() {
         <Route path="/" element={<Navigation />}>
           <Route index element={<Directory />} />
           <Route path="signin" element={<Auth />} />
-          <Route path="shop" element={<Shop />} />
+          <Route path="shop/*" element={<Shop />} />
         </Route>
       </Routes>
     </div>
