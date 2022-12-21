@@ -6,22 +6,15 @@ import { selectIsCartOpen } from "../../store/cart/cart.selector";
 import { signOutUser } from "../../utils/firebase.utils";
 
 import { ReactComponent as CrwnLogo } from "../../assets/crown.svg";
-import { ReactComponent as ShoppingBag } from "../../assets/shopping-bag.svg";
 
+import CartIcon from "../cart-icon/cart-icon.component";
 import Cart from "../cart/cart.component";
 
 import "./navigation.styles.scss";
-import { toggleCartOpen } from "./../../store/cart/cart.action";
 
 const Navigation = () => {
-  const dispatch = useDispatch();
-
   const currentUser = useSelector(selectCurrentUser);
   const isCartOpen = useSelector(selectIsCartOpen);
-
-  const toggleCart = () => {
-    dispatch(toggleCartOpen(!isCartOpen));
-  };
 
   return (
     <div>
@@ -44,7 +37,7 @@ const Navigation = () => {
             </span>
           )}
 
-          <ShoppingBag className="shopping-bag" onClick={toggleCart} />
+          <CartIcon />
           {isCartOpen && <Cart />}
         </div>
       </div>
