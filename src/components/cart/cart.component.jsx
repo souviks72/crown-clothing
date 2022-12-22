@@ -1,4 +1,5 @@
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 import {
   selectCartItems,
@@ -11,17 +12,27 @@ import Button from "../Button/button.component";
 import "./cart.styles.scss";
 
 const Cart = () => {
+  const navigate = useNavigate();
+
+  const goToCheckout = () => {
+    navigate("checkout");
+  };
+
   const cartItems = useSelector(selectCartItems);
   const cartCount = useSelector(selectCartCount);
 
   return (
     <div className="cart-container">
       <div className="cart-items-list">
-        {cartItems.map((cartItem) => (
-          <CartItem key={cartItem.id} item={cartItem} />
-        ))}
+        {cartCount > 0 ? (
+          cartItems.map((cartItem) => (
+            <CartItem key={cartItem.id} item={cartItem} />
+          ))
+        ) : (
+          <p>Cart is empty</p>
+        )}
       </div>
-      <Button>Go To Checkout</Button>
+      <Button onClick={goToCheckout}>Go To Checkout</Button>
     </div>
   );
 };

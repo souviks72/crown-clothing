@@ -8,6 +8,7 @@ import Navigation from "./components/navigation/navigation.component";
 import Directory from "./components/directory/directory.component";
 import Auth from "./components/auth/auth.component";
 import Shop from "./components/shop/shop.component";
+import Checkout from "./components/checkout/checkout.component";
 
 import {
   onAuthStateChangedListener,
@@ -37,6 +38,7 @@ function App() {
           <Route index element={<Directory />} />
           <Route path="signin" element={<Auth />} />
           <Route path="shop/*" element={<Shop />} />
+          <Route path="checkout" element={<Checkout />} />
         </Route>
       </Routes>
     </div>

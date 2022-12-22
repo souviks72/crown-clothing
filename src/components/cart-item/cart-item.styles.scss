@@ -1,0 +1,19 @@
+.cart-item-container {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  align-items: center;
+  padding: 5px 10px;
+}
+
+.cart-item-img {
+  width: 9rem;
+  height: 9rem;
+}
+
+.cart-item-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3px;
+}
